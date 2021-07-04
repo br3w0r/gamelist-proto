@@ -11,7 +11,7 @@ service GameScrape {
 message GameProperties {
     string name = 1;
     repeated Named platforms = 2;
-    int32 year_released = 3;
+    uint32 year_released = 3;
     string image_url = 4;
     repeated Named genres = 5;
 }
