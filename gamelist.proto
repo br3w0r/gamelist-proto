@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "bitbucket.org/br3w0r/gamelist-proto/proto";
+
+package proto;
+
+service GameScrape {
+    rpc ScrapeGames(Empty) returns (stream GameProperties);
+}
+
+message GameProperties {
+    string name = 1;
+    repeated Named platforms = 2;
+    int32 year_released = 3;
+    string image_url = 4;
+    repeated Named genres = 5;
+}
+
+message Named {
+    string name = 1;
+}
+
+message Empty {}
